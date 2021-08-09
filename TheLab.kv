@@ -1,0 +1,161 @@
+WidgetsExemple:
+
+
+<WidgetsExemple>:
+    background_color: 0, 1, 1, 1
+    cols: 3
+    ToggleButton:
+        text: "OFF"
+        on_state: root.on_toggle_botton_state(self)
+        size_hint: None, 1
+        width: "100dp"
+
+    Button:
+        text: "Count"
+        on_press: root.on_button_click()
+        disabled: not root.count_enable
+    
+    #Button:
+    #    text: "Close app"
+    #    on_press: root.stop_app()
+
+    Label:
+        text: root.text
+        font_name: "fonts/Lcd.ttf"
+        font_size: "30dp"
+        color: 0, 1, 0, 1
+
+    Switch:
+        id: my_switch
+        size_hint: None, 1
+        width: "100dp"
+        on_active: root.on_switch_active(self)
+
+    Slider:
+        min: 0
+        max: 100
+        value: 35
+        on_value: root.on_slider_value(self)
+        orientation: "vertical"
+        disabled: not my_switch.active
+
+    Label:
+        text: root.value_slider
+        font_name: "fonts/Lcd.ttf"
+        id: "slider_value_text"
+        font_size: "30dp"
+        color: 0, 1, 0, 1
+
+
+
+<PageLayoutExemple@PageLayout>:
+    MainWidget:
+    BoxLayoutExemple:
+    StackLayoutExemple:
+    GridLayoutExemple:
+
+
+<ScrollViewExemple@ScrollView>
+    StackLayoutExemple:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExemple>:
+    # left-right top-bottom
+    # orientation: "rl-bt"
+    # padding: ("20dp", "40dp")
+    # spacing: "20dp", "20dp"
+
+
+<GridLayoutExemple>:
+    # This layout need number of rows and cols
+    # cols: 2
+    rows: 2
+
+    Button:
+        text: "A"
+        size_hint: None, 1
+        width: "60dp"
+    
+    Button:
+        text: "B"
+    
+    BoxLayoutExemple:
+
+    Button:
+        text: "D"
+        size_hint: None, 1
+        width: "60dp"
+    
+    Button:
+        text: "E"
+    
+    Button:
+        text: "F"
+    
+
+<AnchorLayoutExemple>:
+    # right, left, center
+    anchor_x: "center"
+    # bottom, top, center
+    anchor_Y: "top"
+
+    BoxLayout:
+        size_hint: .1, .1
+
+        Button:
+            text: "A"    
+        
+        Button:
+            text: "B"
+
+
+<BoxLayoutExemple>:
+    orientation: "horizontal"
+
+    Button:
+        text: "Hello"
+        # size_hint: .5, None
+
+        # Eixo x: x, center_x, right
+        # Eixo y: y, center_y, top
+
+        # pos_hint: { "center": .5 }
+        color: 1, 1, 0, 1
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        Button:
+            text: "A"
+            color: 1, 1, 0, 1
+        
+        Button:
+            text: "B"
+            color: 1, 1, 0, 1
+        
+        Button:
+            text: "C"
+            color: 1, 1, 0, 1
+        
+        Button:
+            text: "D"
+            color: 1, 1, 0, 1
+
+    Label:
+        text: "Click me"
+        color: 1, 0, 0, 1
+
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "100dp", "100dp"
+        pos: "100dp", "200dp"
+        color: 1, 1, 0, 1
+
+    Label:
+        text: "Click me"
+        size: "100dp", "100dp"
+        pos: "200dp", "200dp"
+        color: 1, 0, 0, 1
